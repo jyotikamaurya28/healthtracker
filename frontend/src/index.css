@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    
+   color-scheme: light;
+  --background: 214 60% 91%;
+  --foreground: 210 40% 11%;
+  --card: 214 50% 97%;
+  --card-foreground: 210 40% 11%;
+  --muted: 214 40% 85%;
+  --muted-foreground: 210 15% 46%;
+  --border: 214 35% 80%;
+  --input: 214 35% 80%;
+  
+    --background: 210 45% 94%;
+    --foreground: 210 40% 11%;
+
+    --card: 210 30% 99%;
+    --card-foreground: 210 40% 11%;
+
+    --popover: 210 30% 99%;
+    --popover-foreground: 210 40% 11%;
+
+    --primary: 210 80% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 152 45% 48%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 35% 88%;
+    --muted-foreground: 210 15% 46%;
+
+    --accent: 210 50% 85%;
+    --accent-foreground: 210 80% 25%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 30% 82%;
+    --input: 210 30% 82%;
+    --ring: 210 80% 45%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 210 50% 14%;
+    --sidebar-foreground: 210 20% 90%;
+    --sidebar-primary: 210 80% 65%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 45% 22%;
+    --sidebar-accent-foreground: 210 20% 90%;
+    --sidebar-border: 210 40% 22%;
+    --sidebar-ring: 210 80% 55%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --success: 152 55% 45%;
+    --success-foreground: 0 0% 100%;
+    --info: 210 80% 55%;
+    --info-foreground: 0 0% 100%;
+
+    --gradient-medical: linear-gradient(135deg, hsl(210 80% 45%), hsl(152 45% 48%));
+    --gradient-hero: linear-gradient(135deg, hsl(210 80% 45% / 0.9), hsl(152 45% 48% / 0.8));
+    --shadow-card: 0 1px 3px hsl(210 20% 11% / 0.06), 0 4px 12px hsl(210 20% 11% / 0.04);
+    --shadow-elevated: 0 4px 16px hsl(210 20% 11% / 0.08), 0 12px 40px hsl(210 20% 11% / 0.06);
+
+    --font-display: 'Plus Jakarta Sans', sans-serif;
+    --font-body: 'Inter', sans-serif;
+  }
+
+  .dark {
+    --background: 210 50% 8%;
+    --foreground: 210 20% 95%;
+
+    --card: 210 40% 12%;
+    --card-foreground: 210 20% 95%;
+
+    --popover: 210 40% 12%;
+    --popover-foreground: 210 20% 95%;
+
+    --primary: 210 80% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 152 45% 42%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 35% 16%;
+    --muted-foreground: 210 15% 60%;
+
+    --accent: 210 40% 20%;
+    --accent-foreground: 210 80% 75%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 210 30% 20%;
+    --input: 210 30% 20%;
+    --ring: 210 80% 55%;
+
+    --sidebar-background: 210 55% 6%;
+    --sidebar-foreground: 210 20% 90%;
+    --sidebar-primary: 210 80% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 45% 12%;
+    --sidebar-accent-foreground: 210 20% 90%;
+    --sidebar-border: 210 40% 14%;
+    --sidebar-ring: 210 80% 55%;
+  }
+}
+body {
+  background-color: hsl(210, 45%, 94%) !important;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .medical-gradient {
+    background: var(--gradient-medical);
+  }
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+  .card-shadow {
+    box-shadow: var(--shadow-card);
+  }
+  .elevated-shadow {
+    box-shadow: var(--shadow-elevated);
+  }
+  .glass {
+    @apply bg-card/80 backdrop-blur-md;
+  }
+}
+
+@layer components {
+  .stat-card {
+    @apply rounded-xl bg-card p-6 card-shadow border border-border/50 transition-all duration-300 hover:elevated-shadow hover:-translate-y-0.5;
+  }
+  .section-title {
+    font-family: var(--font-display);
+    @apply text-2xl font-bold text-foreground;
+  }
+}
